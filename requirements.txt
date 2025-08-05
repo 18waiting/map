@@ -1,0 +1,8 @@
+torch==2.6.0
+transformers==4.53.2
+peft==0.16.0
+accelerate==0.30.1
+bitsandbytes==0.43.1
+safetensors>=0.4.2
+sentencepiece==0.2.0
+python-dotenv
