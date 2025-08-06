@@ -18,7 +18,7 @@ from tqdm import tqdm
 parser = argparse.ArgumentParser()
 parser.add_argument("--csv",   default="../dataset/train.csv", help="train.csv path")
 parser.add_argument("--topk",  type=int, default=20,       help="TF-IDF top-k terms")
-parser.add_argument("--out",   default="../output/keyword_auto_v1.1.yml", help="YAML output")
+parser.add_argument("--out",   default="../output/keyword_auto_v1.5.yml", help="YAML output")
 parser.add_argument("--min_df",type=int, default=3,        help="min doc freq in TF-IDF")
 args = parser.parse_args() if "__main__" in __name__ else parser.parse_args([])
 
@@ -46,7 +46,7 @@ for mis, g in tqdm(df.groupby("Misconception")):
     yml_dict[mis] = {"regex": regexes}
 
 # 手工逻辑规则可在此处追加
-yml_dict["Incomplete"] = {"rule": "len(text.split()) < 12"}
+yml_dict["Incomplete"] = {"rule": "len(text.split()) < 18"}
 
 os.makedirs(os.path.dirname(args.out), exist_ok=True)
 with open(args.out, "w", encoding="utf-8") as f:
@@ -66,8 +66,8 @@ def feature_hits(row, cfg):
     question = row["QuestionText"].lower()
     if "regex" in cfg:
         return int(has_any(text, cfg["regex"]))
-    elif "rule" in cfg and cfg["rule"] == "len(text.split()) < 12":
-        return int(len(text.split()) < 12)
+    elif "rule" in cfg and cfg["rule"] == "len(text.split()) < 18":
+        return int(len(text.split()) < 18)
     elif row["Misconception"] == "Positive":
         return int(rule_positive(text, question))
     return 0
@@ -85,7 +85,7 @@ stat_df = pd.DataFrame(stat, columns=["Misconception", "Samples", "Hits", "HitRa
 stat_df = stat_df.sort_values("HitRate", ascending=False)
 
 print(stat_df.to_string(index=False, formatters={"HitRate": "{:.2%}".format}))
-stat_df.to_csv("../output/hitrate_v1.1.csv", index=False)
+stat_df.to_csv("../output/hitrate_v1.5.csv", index=False)
 print("✅  已保存命中率表 → hitrate_v1.csv")
 # ---------- 6. 输出示例 ----------
 """

@@ -8,8 +8,8 @@
 import pandas as pd, argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--csv1", default="../output/hitrate_v1.0.csv", help="8版 CSV")
-parser.add_argument("--csv2", default="../output/hitrate_v1.1.csv", help="12版 CSV")
+parser.add_argument("--csv1", default="../output/hitrate_v1.5.csv", help="18版 CSV")
+parser.add_argument("--csv2", default="../output/hitrate_v1.6.csv", help="20版 CSV")
 args = parser.parse_args() if "__main__" in __name__ else parser.parse_args([])
 
 # 读取
@@ -27,7 +27,7 @@ cmp["ΔHits"]      = cmp["Hits_new"]      - cmp["Hits_old"]
 cmp_sorted = cmp.sort_values("ΔHitRate", ascending=False)
 
 print("\n=== 每类提升情况（Top 15）===")
-print(cmp_sorted.head(15).to_string(
+print(cmp_sorted.head(50).to_string(
         index=False,
         formatters={"HitRate_old": "{:.2%}".format,
                     "HitRate_new": "{:.2%}".format,
@@ -36,7 +36,7 @@ print(cmp_sorted.head(15).to_string(
 # 计算加权平均提升（整体水平）
 total_old = (cmp["HitRate_old"] * cmp["Samples_old"]).sum() / cmp["Samples_old"].sum()
 total_new = (cmp["HitRate_new"] * cmp["Samples_new"]).sum() / cmp["Samples_new"].sum()
-print(f"\n整体加权平均 HitRate: 旧版 {total_old:.2%} → 新版 {total_new:.2%} "
+print(f"\n整体加权平均 HitRate: 18版 {total_old:.2%} → 20版 {total_new:.2%} "
       f"({total_new-total_old:+.2%})")
 
 # 保存对比文件

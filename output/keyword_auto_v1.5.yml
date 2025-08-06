@@ -1,0 +1,526 @@
+? ''
+: regex:
+  - \bthinks?\b
+  - \btimess?\b
+  - \banswers?\b
+  - \bshadeds?\b
+  - \bdivideds?\b
+  - \bnumbers?\b
+Adding_across:
+  regex:
+  - \badds?\b
+  - \bpluss?\b
+  - \bthinks?\b
+  - \banswers?\b
+  - \badd\ adds?\b
+  - \baddeds?\b
+  - \bfractions?\b
+  - \badds?\b
+  - \bandds?\b
+  - \bequales?\b
+  - \bpluss?\b
+  - \bbelieves?\b
+  - \bthinks?\b
+  - \bknows?\b
+Adding_terms:
+  regex:
+  - \bthinks?\b
+  - \badds?\b
+  - \badd\ 22s?\b
+  - \bthink\ 22s?\b
+  - \banswers?\b
+  - \bnumbers?\b
+  - \bbelieves?\b
+  - \bbelieve\ 22s?\b
+  - \bplus\ 22s?\b
+  - \bthinks?\b
+  - \badds?\b
+  - \baways?\b
+  - \bneedss?\b
+  - \blefts?\b
+Additive:
+  regex:
+  - \badds?\b
+  - \bthinks?\b
+  - \baways?\b
+  - \baddeds?\b
+  - \bdifferences?\b
+  - \bthink\ 10s?\b
+  - \badds?\b
+  - \bthinks?\b
+  - \baways?\b
+  - \baddeds?\b
+  - \bthink\ 10s?\b
+  - \bdifferences?\b
+  - \bminuss?\b
+Base_rate:
+  regex:
+  - \bdivideds?\b
+  - \bhourss?\b
+  - \bdivided\ 64s?\b
+  - \banswers?\b
+  - \bdivides?\b
+  - \bdivide\ 192s?\b
+  - \bpersons?\b
+  - \bdivideds?\b
+  - \bdivided\ 64s?\b
+  - \bhourss?\b
+  - \banswers?\b
+  - \bdivides?\b
+Certainty:
+  regex:
+  - \bcertains?\b
+  - \brounds?\b
+  - \bclosers?\b
+  - \bchances?\b
+  - \bprobabilitys?\b
+  - \bhappens?\b
+Definition:
+  regex:
+  - \bpolygons?\b
+  - \bsidess?\b
+  - \bpolygon\ sidess?\b
+  - \bregulars?\b
+  - \bregular\ polygons?\b
+  - \bthinks?\b
+  - \binternals?\b
+  - \bangles?\b
+  - \bhexagons?\b
+  - \bpolygons?\b
+  - \bsidess?\b
+  - \bpolygon\ sidess?\b
+  - \bregulars?\b
+  - \bregular\ polygons?\b
+Denominator-only_change:
+  regex:
+  - \badds?\b
+  - \bdenominators?\b
+  - \btimess?\b
+  - \bthinks?\b
+  - \bcommons?\b
+  - \bdenominator\ 15s?\b
+  - \badds?\b
+  - \baddings?\b
+  - \bfit\ 15s?\b
+  - \bfits?\b
+  - \bdenominators?\b
+  - \bconverted\ 15thss?\b
+Division:
+  regex:
+  - \bdivides?\b
+  - \bdivideds?\b
+  - \bthinks?\b
+  - \bdividings?\b
+  - \bcakes?\b
+  - \beatss?\b
+  - \bdivisons?\b
+  - \bequations?\b
+  - \banswers?\b
+  - \bdivides?\b
+  - \bdivideds?\b
+  - \bthinks?\b
+  - \beatens?\b
+  - \beatss?\b
+Duplication:
+  regex:
+  - \btimess?\b
+  - \btimes\ 10s?\b
+  - \bthinks?\b
+  - \btimes\ 15s?\b
+  - \banswers?\b
+  - \bequalss?\b
+  - \btimess?\b
+  - \btimes\ 10s?\b
+  - \btimes\ 15s?\b
+  - \bthinks?\b
+  - \bmultiplieds?\b
+  - \banswers?\b
+  - \bequalss?\b
+  - \banswer\ 10s?\b
+Firstterm:
+  regex:
+  - \btimess?\b
+  - \badds?\b
+  - \bpatterns?\b
+  - \btimes?\b
+  - \bdotss?\b
+  - \bgoings?\b
+  - \bknows?\b
+  - \bgrids?\b
+  - \bmultiplyings?\b
+  - \btimess?\b
+  - \badds?\b
+  - \bbecausees?\b
+  - \bpatterns?\b
+  - \badded\ sequences?\b
+FlipChange:
+  regex:
+  - \bdivideds?\b
+  - \bthinks?\b
+  - \bdivides?\b
+  - \bhalfs?\b
+  - \banswers?\b
+  - \bgots?\b
+  - \bflip\ multiplys?\b
+  - \bmultiplys?\b
+  - \bswaps?\b
+  - \bflips?\b
+  - \bdivideds?\b
+  - \bdids?\b
+  - \bdenominators?\b
+  - \bnumerators?\b
+Ignores_zeroes:
+  regex:
+  - \bthinks?\b
+  - \bgreatests?\b
+  - \bzeross?\b
+  - \bdoesns?\b
+  - \bbiggers?\b
+  - \bnumberss?\b
+  - \baways?\b
+  - \baway\ 79s?\b
+  - \bgreatests?\b
+  - \btenthss?\b
+  - \banswers?\b
+  - \bdecimal\ numbers?\b
+  - \bbiggers?\b
+  - \bthinks?\b
+Incomplete:
+  regex:
+  - \byouus?\b
+  - \bgoes\ 120s?\b
+  - \bhavent\ shadeds?\b
+  - \bhavent\ filleds?\b
+  - \bhavents?\b
+  - \bhalf\ numbers?\b
+  - \bhalfs?\b
+  - \bhadeds?\b
+Incorrect_equivalent_fraction_addition:
+  regex:
+  - \badds?\b
+  - \btimess?\b
+  - \bthinks?\b
+  - \bequals\ 15s?\b
+  - \bequalss?\b
+  - \badds?\b
+  - \btimess?\b
+  - \bthinks?\b
+  - \bequals\ 15s?\b
+  - \bequalss?\b
+Interior:
+  regex:
+  - \bsidess?\b
+  - \btimess?\b
+  - \bhexagons?\b
+  - \bpentagons?\b
+  - \binteriors?\b
+  - \bsums?\b
+  - \bchoses?\b
+  - \bdegrees\ divideds?\b
+  - \bworked\ 144s?\b
+  - \bchose\ workeds?\b
+  - \bworking\ choses?\b
+  - \btheres\ informations?\b
+  - \bworkings?\b
+  - \binformations?\b
+Inverse_operation:
+  regex:
+  - \bdoubles?\b
+  - \bthinks?\b
+  - \banswers?\b
+  - \bequalss?\b
+  - \btimess?\b
+  - \bequals\ 48s?\b
+  - \bmultiplying\ 24x2s?\b
+  - \bmultiplyings?\b
+  - \bdoubles?\b
+  - \bthinks?\b
+  - \banswers?\b
+  - \bequalss?\b
+Inversion:
+  regex:
+  - \btimess?\b
+  - \bdenominators?\b
+  - \btimes\ 15s?\b
+  - \bthinks?\b
+  - \bnumerators?\b
+  - \banswers?\b
+  - \btimess?\b
+  - \bdenominators?\b
+  - \bturneds?\b
+  - \btimes\ 15s?\b
+  - \bmultiplieds?\b
+  - \bthinks?\b
+  - \bnumerators?\b
+  - \banswers?\b
+Irrelevant:
+  regex:
+  - \btimess?\b
+  - \bthinks?\b
+  - \btables?\b
+  - \btimes\ tables?\b
+  - \bdivideds?\b
+  - \banswers?\b
+  - \btimess?\b
+  - \bthinks?\b
+  - \btables?\b
+  - \btimes\ tables?\b
+  - \bdivideds?\b
+  - \banswers?\b
+  - \btabless?\b
+  - \btimes\ tabless?\b
+Longer_is_bigger:
+  regex:
+  - \bthinks?\b
+  - \bnumbers?\b
+  - \bbiggers?\b
+  - \bplaces?\b
+  - \bthousandthss?\b
+  - \bdigitss?\b
+  - \bpoints?\b
+  - \bthinks?\b
+  - \bbiggers?\b
+  - \bnumbers?\b
+  - \bplaces?\b
+  - \bthousandthss?\b
+  - \bdigitss?\b
+  - \bbiggests?\b
+Mult:
+  regex:
+  - \bhalfs?\b
+  - \bthinks?\b
+  - \btimess?\b
+  - \bdivides?\b
+  - \bthink\ halfs?\b
+  - \bdivideds?\b
+  - \bhalveds?\b
+  - \bhalfs?\b
+  - \bhslfs?\b
+  - \bhalved\ answers?\b
+  - \bconverteds?\b
+  - \blike\ 6x0s?\b
+  - \bmultiplys?\b
+  - \bmakess?\b
+Multiplying_by_4:
+  regex:
+  - \btimess?\b
+  - \btimes\ 12s?\b
+  - \bthinks?\b
+  - \bdivideds?\b
+  - \bmultiplys?\b
+  - \bpersons?\b
+  - \bdid\ 12s?\b
+  - \bratios?\b
+  - \bdids?\b
+Not_variable:
+  regex:
+  - \bthinks?\b
+  - \bnumbers?\b
+  - \bequals?\b
+  - \badds?\b
+  - \bmeanss?\b
+  - \bmissings?\b
+  - \bthinks?\b
+  - \bnumbers?\b
+  - \bequals?\b
+  - \badds?\b
+  - \bmeanss?\b
+  - \bequal\ 24s?\b
+  - \banswers?\b
+  - \bmissings?\b
+Positive:
+  regex:
+  - \bpositives?\b
+  - \bnegatives?\b
+  - \bnegativess?\b
+  - \bmakes?\b
+  - \bmake\ positives?\b
+  - \bminuss?\b
+  - \bminusess?\b
+  - \bthink\ equalss?\b
+  - \bminuses\ adds?\b
+  - \bminuses\ pluss?\b
+  - \bcausess?\b
+  - \bthink\ pluss?\b
+  - \badd\ minusess?\b
+  - \badditives?\b
+Scale:
+  regex:
+  - \bunlikelys?\b
+  - \bnumbers?\b
+  - \blows?\b
+  - \bchances?\b
+  - \bsmalls?\b
+  - \bimpossibles?\b
+  - \bclosers?\b
+  - \bfully\ zeros?\b
+  - \bfullys?\b
+  - \blowest\ probabilitys?\b
+  - \blowests?\b
+  - \bseconds?\b
+  - \bsecond\ lowests?\b
+  - \bdidnts?\b
+Shorter_is_bigger:
+  regex:
+  - \bnumbers?\b
+  - \bnumberss?\b
+  - \bdecimals?\b
+  - \bbiggers?\b
+  - \bsmallers?\b
+  - \bthinks?\b
+  - \bmatters?\b
+  - \bplaces?\b
+  - \bnumbers?\b
+  - \bnumberss?\b
+  - \bdecimals?\b
+  - \bbiggers?\b
+  - \bsmallers?\b
+  - \bthinks?\b
+Subtraction:
+  regex:
+  - \baways?\b
+  - \bcakes?\b
+  - \broberts?\b
+  - \beatss?\b
+  - \bthinks?\b
+  - \bates?\b
+  - \bminuss?\b
+  - \btakeaways?\b
+  - \bdenominators?\b
+  - \bawayings?\b
+  - \baways?\b
+  - \banswers?\b
+  - \beaten\ subtractions?\b
+  - \bnumeratorss?\b
+SwapDividend:
+  regex:
+  - \bdivideds?\b
+  - \bdivides?\b
+  - \bthinks?\b
+  - \bhalfs?\b
+  - \btimess?\b
+  - \banswers?\b
+  - \blooked\ 2ss?\b
+  - \bdecided\ gaves?\b
+  - \bdecideds?\b
+  - \bsimply\ eds?\b
+  - \bsimplys?\b
+  - \bdivideds?\b
+Tacking:
+  regex:
+  - \bnegatives?\b
+  - \bminuss?\b
+  - \badds?\b
+  - \bjusts?\b
+  - \bnegativess?\b
+  - \banswers?\b
+  - \bnormals?\b
+  - \bopposite\ 13s?\b
+  - \bbelongss?\b
+  - \bthink\ belongss?\b
+  - \bnegatives?\b
+  - \blike\ normals?\b
+  - \bnormal\ subtractions?\b
+  - \blikes?\b
+Unknowable:
+  regex:
+  - \bsidess?\b
+  - \binformations?\b
+  - \bangles?\b
+  - \bshapes?\b
+  - \bknows?\b
+  - \bpolygons?\b
+  - \blots?\b
+  - \bneed\ infos?\b
+  - \binfos?\b
+  - \bneed\ sass?\b
+  - \bsass?\b
+  - \bmake\ equations?\b
+  - \bequations?\b
+  - \bsidess?\b
+WNB:
+  regex:
+  - \bshadeds?\b
+  - \bthinks?\b
+  - \btriangless?\b
+  - \bshaded\ shadeds?\b
+  - \btriangles\ shadeds?\b
+  - \bblues?\b
+  - \bsayss?\b
+  - \bshadeds?\b
+  - \bnumbers?\b
+  - \bpickeds?\b
+  - \bsheads?\b
+  - \bshadrds?\b
+  - \bnumerators?\b
+  - \bknows?\b
+Whole_numbers_larger:
+  regex:
+  - \bnumbers?\b
+  - \bdecimals?\b
+  - \bthinks?\b
+  - \bnumberss?\b
+  - \bdecimalss?\b
+  - \bpoints?\b
+  - \bdose\ decamails?\b
+  - \bdoses?\b
+  - \bdecamails?\b
+  - \bnumberrs?\b
+  - \btenthss?\b
+  - \bwichs?\b
+  - \bwich\ smallers?\b
+  - \bnumbers?\b
+Wrong_Fraction:
+  regex:
+  - \btimess?\b
+  - \bdivideds?\b
+  - \bdivided\ 24s?\b
+  - \bthinks?\b
+  - \banswers?\b
+  - \breds?\b
+  - \btimess?\b
+  - \bdivideds?\b
+  - \bdoubleds?\b
+  - \bdivided\ 24s?\b
+  - \bthinks?\b
+  - \banswers?\b
+Wrong_Operation:
+  regex:
+  - \btimess?\b
+  - \bjusts?\b
+  - \badds?\b
+  - \btimess?\b
+  - \bjusts?\b
+  - \bfractionss?\b
+Wrong_fraction:
+  regex:
+  - \btimess?\b
+  - \bdivideds?\b
+  - \bthinks?\b
+  - \bdivided\ timess?\b
+  - \bthink\ 24s?\b
+  - \banswers?\b
+  - \btimess?\b
+  - \bdivideds?\b
+  - \bdivided\ timess?\b
+  - \bthinks?\b
+  - \bballss?\b
+  - \bthink\ 24s?\b
+  - \bhalfs?\b
+  - \banswers?\b
+Wrong_term:
+  regex:
+  - \btimes?\b
+  - \badds?\b
+  - \bpatterns?\b
+  - \bgoess?\b
+  - \bdotss?\b
+  - \baddings?\b
+  - \bgoings?\b
+  - \bthink\ goings?\b
+  - \bgoing\ fourss?\b
+  - \bnths?\b
+  - \bthink\ addeds?\b
+  - \btimes?\b
+  - \bsequence\ pluss?\b
+  - \bchose\ goings?\b
