@@ -1,6 +1,13 @@
-- 48. so, if you add themm together it will equal 48
 - i thought of tenths,units but then i doubled 4 which was 8 so 48.
 - because 1y is 24 you would x 24 by 2 and it = 48
 - i saw that 2 gos into 24 so i did 24Ã—2 which gave me 48
 - there is a two so its------>2y=24------->48
 - y=24------->48
+- I first looked at the numbers and noticed that if y is 24, then doubling it for 2y would just be 24 + 24, which is 48.
+- Since y equals 24, I knew that 2y means two times y, so I did 24 ¡Á 2, and that¡¯s how I got 48.
+- I thought about it like this: if one y is 24, then two y¡¯s would be double that, so 24 ¡Á 2 = 48.
+- At first, I saw y = 24, and since there¡¯s a 2 in front of y (like 2y), I just multiplied 24 by 2 to make 48.
+- I remembered that 2y is the same as y + y, and since y is 24, I added 24 + 24 to get 48.
+- Looking at 2y = ?, I knew y was 24, so I doubled it¡ªlike 20 ¡Á 2 = 40 and 4 ¡Á 2 = 8, then 40 + 8 = 48.  
+- I saw that y = 24, and since 2y means two of them, I just did 24 times two, which gave me 48.
+- I broke it down: if 1y is 24, then 2y must be twice as much, so I multiplied 24 by 2 and landed on 48.

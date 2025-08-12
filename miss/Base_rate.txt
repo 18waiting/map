@@ -1,1 +1,6 @@
 - when you dividee 3 by 192, you get 64.
+- If you split 192 into 3 equal parts, each part will be 64. So, 192 divided by 3 equals 64.  
+- Imagine taking away 3 from 192 repeatedly. You¡¯d subtract 3 a total of 64 times before reaching zero. That means 192 ¡Â 3 = 64.  
+- Since 3 multiplied by 64 gives you 192, it makes sense that dividing 192 by 3 brings you back to 64.  
+- Picture 192 candies shared equally among 3 friends. Each friend gets 64 candies¡ªso 192 divided by 3 is 64.  
+- You can think of 192 ¡Â 3 as (180 ¡Â 3) + (12 ¡Â 3) = 60 + 4 = 64.  

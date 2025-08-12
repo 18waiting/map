@@ -1,11 +1,3 @@
-? ''
-: regex:
-  - \bthinks?\b
-  - \btimess?\b
-  - \banswers?\b
-  - \bshadeds?\b
-  - \bdivideds?\b
-  - \bnumbers?\b
 Adding_across:
   regex:
   - \badds?\b

@@ -73,7 +73,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--csv", default="../dataset/train.csv")
     parser.add_argument("--yaml", default="../output/keyword_auto_v1.5.yml")
-    parser.add_argument("--new_yaml", default="../output/keyword_auto_v1.5.yml")
+    parser.add_argument("--new_yaml", default="../output/keyword_auto_v2.5.yml")
     parser.add_argument("--hitrate_csv", default="../output/hitrate_v1.5.csv")
     parser.add_argument("--topk", type=int, default=10)
     args = parser.parse_args()

@@ -1,7 +1,15 @@
-- you have to take the original time by 4 to get your answer.
 - 12 duvided by 3 is 4 so 192 x 4 = 768
 - 192 / 3 = 64 then you tumes it by 12 =768
 - 192 x 4 = 768
 - you do 192/3 which is 64 andd then do 64x12 which was 768.
 - because i multiple it by 4
 - you do 192/3 which is 64 and then do 64x12 which is 768
+- 12 divided by 3 equals 4, so if you multiply 192 by 4, you get 768.  
+- 192 split into 3 parts is 64, and then 64 times 12 gives you 768.  
+- First, divide 192 by 3 to get 64. Then, since 12 is 3 times 4, you multiply 64 by 12 (which is like doing 64 ¡Á 3 ¡Á 4) to reach 768.  
+- Since 12 ¡Â 3 = 4, you can just multiply 192 by 4 to make 768.  
+- Or, divide 192 by 3 first (64) and then multiply by 12 to confirm it¡¯s 768.  
+- 12 is 4 times bigger than 3, so 192 ¡Á 4 = 768.  
+- If 192 ¡Â 3 = 64, then scaling it back up by 12 gives 64 ¡Á 12 = 768.  
+- You can think of it as: 192 split into 3 equal parts is 64, and 12 of those parts (since 12 is 3 ¡Á 4) would be 768.  
+- Another way: 192 ¡Á (12 ¡Â 3) = 192 ¡Á 4 = 768.  

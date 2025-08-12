@@ -1,15 +1,12 @@
 - since itâ€™s less than 0 then it can nott be done.
-- i think this because there is moree than 0 probability but very less as well.
 - it is very unlikelyy but it can still happen as it has a percentage.
-- because 0.9 is lower than 1 and bigger than 0
 - because it is higher than zero but not 5
-- because it is not a likely more that 50 percent
-- because it's not veryy likely to get an event if its 0.
 - c as immpossible is 0 and certain is 0.100.
-- i think this because as all probabilities add up to 1, 1 - 0.9 is 0.91.
 - if 1 is 50% then 0.9 must be leds than 50 which is half.
 - it could happen but no where near 100% sure
-- its only 0.9 percent chancr for it to happen.
-- l think this because the event is under five percent.
-- the probability is less than 50%
-- the probability is lesss than 50%
+- Since the value is negative, it¡¯s not possible¡ªprobabilities can¡¯t be below zero.
+- Even though the chance is tiny, it¡¯s not zero, so it could still happen.
+- It¡¯s above zero but not big enough to be likely¡ªdefinitely not 5%.
+- A probability of 0 means impossible, and 1 (or 100%) means certain.
+- If 0.5 is 50%, then 0.9 must be way more than half¡ªalmost certain!
+- There¡¯s a small chance, but we¡¯re far from being completely sure. 
