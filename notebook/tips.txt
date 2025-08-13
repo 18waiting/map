@@ -1,0 +1,86 @@
+好的！下面把你 notebook 里每个编号单元在做什么、为什么这么做讲清楚（按我给你的步骤号对齐）：
+
+1. 安装依赖
+
+* 把训练/量化/高效微调需要的库一次性装齐：`transformers`、`accelerate`、`datasets`、`bitsandbytes`（4bit 量化）、`trl`（SFTTrainer）、`peft`（LoRA/PEFT）、`sentencepiece`（部分分词器依赖）、`wandb`（可选日志）。
+* 版本下限确保和 Gemma-3 在 Transformers 里的实现兼容。
+
+2. 登录 HF、设设备
+
+* 用 `huggingface_hub.login()` 登录以拉取需要授权的模型。
+* 关/开 W\&B（默认关）。
+* 选择 `cuda` 或 `cpu`，后续自动放到合适设备。
+
+3. 选择 Gemma-3 变体
+
+* 设定你要用的 Gemma-3 指令微调模型（如 `google/gemma-3-1b-it`）。小模型上手快、显存更友好。
+
+4. 配置 4-bit 量化（QLoRA）
+
+* `BitsAndBytesConfig(load_in_4bit=True, nf4 + bfloat16 compute)`：权重量化到 4bit（极省显存），计算仍用 bf16 保持数值稳定。
+* 这是 QLoRA 的基础：低显存把大模型“搬”进来，再只训练极少量的 LoRA 适配参数。
+
+5. 加载分词器与量化后的模型（纯 Transformers 路线）
+
+* `AutoTokenizer.from_pretrained`、`AutoModelForCausalLM.from_pretrained` 直接从 HF 拉 Gemma-3（避免任何第三方实现）。
+* `device_map="auto"` 自动把模型放到 GPU/CPU。
+* `use_cache=False` 为了配合梯度检查点（省显存）。
+* 若无 `pad_token`，用 `eos_token` 兜底（生成模型常见做法）。
+
+6. 估算模型大小
+
+* 统计参数与 buffer 的字节数，打印近似体积。
+* 方便你评估资源是否够（虽然量化真实显存占用更低，但这个能给个参考）。
+
+7. 准备 QLoRA（PEFT）
+
+* 开启 `gradient_checkpointing` 进一步省显存。
+* `prepare_model_for_kbit_training` 做 4bit 训练的必要预处理。
+* `LoraConfig` 指定注入的模块（q/k/v/o\_proj 等注意覆盖了注意力与 MLP 常用投影层）、秩、alpha、dropout、任务类型。
+* 这样只训练少量 LoRA 权重，速度快、显存小。
+
+8. 读取你的 JSONL 数据
+
+* 用 `datasets.load_dataset` 读 `train_finetune.jsonl`，切成 train/validation（0.8/0.2）。
+* 数据里应有 `instruction` / `input` / `output` 三列（你之前就按这个导出的）。
+
+9. 定义样本拼接格式
+
+* `formatting_func` 把一行样本拼成“指令 + 输入 + 标准答案”的纯文本。
+* SFTTrainer会对这个文本直接做自回归训练（LM 目标），让模型学会按你要求的格式输出。
+
+10. 配置 Trainer（TRL 的 SFTTrainer）
+
+* 关键训练超参：batch、梯度累积、学习率、cosine 调度、warmup、`max_steps`、保存/评估频率、`optim="paged_adamw_8bit"`（8bit 优化器进一步省显存）。
+* `data_collator=DataCollatorForLanguageModeling(mlm=False)` 走 Causal LM 目标。
+* `packing=False` 避免把多个样本拼在同一序列里（简单直观）。
+
+11. 训练
+
+* `trainer.train()` 开始 QLoRA 微调；保存 Trainer 状态以便断点续训或复现。
+
+12. 保存 LoRA 适配器 & 分词器
+
+* 只保存 LoRA 权重（很小），下次推理/继续训练直接加载适配器即可；同时保存 tokenizer。
+
+13. 推理（生成）
+
+* 构造与你训练格式一致的 prompt（含 Valid categories / misconceptions 等），分词并送入 `.generate()`。
+* 这里用贪心/不采样（`do_sample=False`）保证格式稳定，`max_new_tokens` 控制输出长度。
+* `decode` 打印最终模型回答，检查是否按 `Category[:Misconception]` 输出。
+
+14. （可选）合并 LoRA
+
+* `merge_and_unload()` 把 LoRA 适配权重合到基础模型里，便于单文件部署（代价是体积变大；若继续用 QLoRA 推理就不必合并）。
+
+---
+
+### 小贴士与常见坑
+
+* **显存不够**：优先 4bit + QLoRA；再调小 `per_device_train_batch_size`、增大 `gradient_accumulation_steps`、开启 `gradient_checkpointing`。
+* **长序列**：`max_seq_length` 先设 512/1024，根据 token 长度直方图再调。
+* **格式对齐**：推理 prompt 必须和训练格式一致，尤其是“Format your answer as: …”。
+* **监控**：要可视化曲线把 `WANDB_DISABLED` 设为 `"false"`，`report_to="wandb"`。
+* **评估**：SFTTrainer 默认是 loss；需要 MAP\@k 等自定义指标，可在生成后做离线评测。
+
+这样一套就是：**用 Transformers 直接加载 Gemma-3 → 4bit 量化 → QLoRA（PEFT）微调 → 保存/推理 →（可选）合并导出**。你可以照着逐格跑起来。
